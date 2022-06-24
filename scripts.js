@@ -5,9 +5,9 @@ let playerSelection;
 let playerScore = 0;
     let computerScore = 0;
 function computerPlay(){
-    let randomPosition = positions[Math.floor(Math.random() * positions.length)];
+    
 
-    return randomPosition;
+    return positions[Math.floor(Math.random() * positions.length)];
 }
 function playRound(playerSelection, computerSelection) {
   if (playerSelection.toLowerCase() === 'Rock'.toLowerCase()) {
@@ -95,7 +95,7 @@ function playRound(playerSelection, computerSelection) {
  
   function game(){
     
-    for (let i = 0; i < 5; i++) {
+    while (playerScore < 5 && computerScore < 5) {
         playerSelection = prompt("Choose your position");
     computerSelection = computerPlay();
         playRound(playerSelection, computerSelection);
